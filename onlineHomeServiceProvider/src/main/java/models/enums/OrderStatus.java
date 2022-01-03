@@ -1,2 +1,5 @@
-package models.enums;public enum OrderStatus {
+package models.enums;
+
+public enum OrderStatus {
+
 }

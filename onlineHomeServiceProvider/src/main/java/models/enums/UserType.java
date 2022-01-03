@@ -1,2 +1,6 @@
-package models.enums;public enum UserType {
+package models.enums;
+
+public enum UserType {
+    MANAGER, CUSTOMER, SPECIALIST;
+
 }
