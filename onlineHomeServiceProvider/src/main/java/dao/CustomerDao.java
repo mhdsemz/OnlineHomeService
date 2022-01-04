@@ -29,4 +29,17 @@ public class CustomerDao extends BaseDao {
         session.getTransaction().commit();
         session.close();
     }
+
+    public Customer getCustomerByPhoneNumberAndPass(String phoneNumber, String password) {
+        session = builderSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("FROM Customer WHERE phoneNumber=:phoneNumber and password=:password");
+        query.setParameter("phoneNumber", phoneNumber);
+        query.setParameter("password", password);
+        Customer customer = (Customer) query.getSingleResult();
+        session.getTransaction().commit();
+        session.close();
+        return customer;
+    }
+
 }
