@@ -12,4 +12,11 @@ public class UserValidation {
             return "false";
         throw new InvalidInformationException("***check your email again!! something is wrong***");
     }
+    public static String checkCharacterValidation(String input) {
+        if (input.matches("^[a-zA-Z]+$"))
+            return "true";
+        else if (input.equals("0"))
+            return "false";
+        throw new InvalidInformationException("***please enter alphabet***");
+    }
 }
