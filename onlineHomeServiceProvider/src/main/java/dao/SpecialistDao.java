@@ -10,13 +10,13 @@ import static dao.BaseDao.builderSessionFactory;
 public class SpecialistDao {
     private Session session;
 
-    public void save(Customer customer) {
-        if (customer == null) {
-            throw new RuntimeException("sorry customer is null!!!");
+    public void save(Specialist specialist) {
+        if ( specialist== null) {
+            throw new RuntimeException("sorry specialist is null!!!");
         } else {
             session = builderSessionFactory().openSession();
             session.beginTransaction();
-            session.save(customer);
+            session.save(specialist);
             session.getTransaction().commit();
             session.close();
         }
@@ -32,6 +32,17 @@ public class SpecialistDao {
         session.getTransaction().commit();
         session.close();
         return specialist;
+    }
+
+    public void modifyPassword(String phoneNumber, String newPassword) {
+        session = builderSessionFactory().openSession();
+        session.beginTransaction();
+        Query query = session.createQuery("UPDATE Specialist set password=:newPassword where phoneNumber=:phoneNumber");
+        query.setParameter("newPassword", newPassword);
+        query.setParameter("phoneNumber", phoneNumber);
+        query.executeUpdate();
+        session.getTransaction().commit();
+        session.close();
     }
 
 }
