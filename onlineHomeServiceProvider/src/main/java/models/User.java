@@ -19,6 +19,7 @@ public class User {
     @Column(unique = true)
     private String emailAddress;
     private String password;
+    private String phoneNumber;
     @Enumerated(EnumType.STRING)
     private UserStatus userStatus;
     @CreationTimestamp
