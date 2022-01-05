@@ -1,6 +1,7 @@
 package models;
 
 import lombok.Data;
+import models.member.Specialist;
 
 import javax.persistence.*;
 import java.util.ArrayList;

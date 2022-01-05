@@ -2,7 +2,7 @@ package service;
 
 import dao.ManagerDao;
 import lombok.Data;
-import models.Manager;
+import models.member.Manager;
 
 @Data
 public class ManagerService {

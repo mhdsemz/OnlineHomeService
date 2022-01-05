@@ -1,9 +1,7 @@
 package dao;
 
-import models.Manager;
 import models.Order;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import static dao.BaseDao.builderSessionFactory;
 

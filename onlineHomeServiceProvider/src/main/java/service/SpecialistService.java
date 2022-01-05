@@ -2,7 +2,7 @@ package service;
 
 import dao.SpecialistDao;
 import lombok.Data;
-import models.Specialist;
+import models.member.Specialist;
 
 @Data
 public class SpecialistService {

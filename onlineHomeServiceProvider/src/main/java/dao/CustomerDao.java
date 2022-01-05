@@ -1,6 +1,6 @@
 package dao;
 
-import models.Customer;
+import models.member.Customer;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 

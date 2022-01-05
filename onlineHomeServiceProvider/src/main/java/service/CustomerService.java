@@ -2,7 +2,7 @@ package service;
 
 import dao.CustomerDao;
 import lombok.Data;
-import models.Customer;
+import models.member.Customer;
 
 @Data
 public class CustomerService {

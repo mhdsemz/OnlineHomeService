@@ -1,7 +1,6 @@
 package dao;
 
-import models.Manager;
-import models.User;
+import models.member.User;
 import org.hibernate.Session;
 
 import static dao.BaseDao.builderSessionFactory;

@@ -3,7 +3,7 @@ package config;
 import dao.CustomerDao;
 import dao.OrderDao;
 import dao.UserDao;
-import models.Specialist;
+import models.member.Specialist;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
