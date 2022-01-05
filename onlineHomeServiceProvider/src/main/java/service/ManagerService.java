@@ -6,7 +6,7 @@ import models.member.Manager;
 
 @Data
 public class ManagerService {
-    private final ManagerDao managerDao;
+    private  ManagerDao managerDao;
 
     public void save(Manager manager) {
         managerDao.save(manager);

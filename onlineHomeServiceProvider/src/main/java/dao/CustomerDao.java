@@ -2,6 +2,7 @@ package dao;
 
 import models.member.Customer;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 public class CustomerDao extends BaseDao {
@@ -41,5 +42,14 @@ public class CustomerDao extends BaseDao {
         session.close();
         return customer;
     }
+
+    public void update(Customer customer) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(customer);
+        transaction.commit();
+        session.close();
+    }
+
 
 }

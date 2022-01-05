@@ -1,16 +1,19 @@
 package dao;
 
 import models.member.Specialist;
+import models.member.User;
+import models.service.SubService;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import static dao.BaseDao.builderSessionFactory;
 
-public class SpecialistDao {
+public class SpecialistDao extends UserDao {
     private Session session;
 
     public void save(Specialist specialist) {
-        if ( specialist== null) {
+        if (specialist == null) {
             throw new RuntimeException("sorry specialist is null!!!");
         } else {
             session = builderSessionFactory().openSession();
@@ -44,4 +47,11 @@ public class SpecialistDao {
         session.close();
     }
 
+    public void update(User user) {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        session.update(user);
+        transaction.commit();
+        session.close();
+    }
 }
