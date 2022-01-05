@@ -44,5 +44,12 @@ public class UserValidation {
         return true;
     }
 
+    public boolean checkIfPassIsTrue(String oldPassword, String inputPassword) {
+        if (!oldPassword.equals(inputPassword))
+            throw new RuntimeException("***password is not true!! please check again***");
+        return true;
+    }
+
+
 }
 

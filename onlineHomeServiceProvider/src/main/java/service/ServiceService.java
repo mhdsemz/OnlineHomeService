@@ -26,4 +26,7 @@ public class ServiceService {
         return userValidation.validateNewName(name, getListOfServicesNames());
     }
 
+    public void changePassword() {
+        //TODO
+    }
 }
