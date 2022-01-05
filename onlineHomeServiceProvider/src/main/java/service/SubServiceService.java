@@ -16,12 +16,12 @@ public class SubServiceService {
         return allName;
     }
 
-    public boolean validateNewName(String name) {
-        return userValidation.validateNewName(name, getAllServiceName());
-    }
-
     public boolean addSubService(SubService service) {
         subServiceDao.create(service);
         return true;
+    }
+
+    public boolean validateNewName(String name) {
+        return userValidation.validateNewName(name, getAllServiceName());
     }
 }
