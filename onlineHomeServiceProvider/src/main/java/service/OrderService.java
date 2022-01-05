@@ -12,7 +12,6 @@ import java.util.List;
 public class OrderService {
     OrderDao orderDao;
     ServiceDao serviceDao;
-    ServiceValidation serviceValidation;
 
     public boolean saveOrder(Order order) {
         orderDao.save(order);
@@ -23,17 +22,6 @@ public class OrderService {
         orderDao.update(order);
     }
 
-    public void checkNameValidation() {
-        //TODO
-    }
 
-    public List<String> getAllServiceName() {
-        return null;
-        //TODO
-    }
 
-    public boolean createService(Service service) {
-        serviceDao.create(service);
-        return true;
-    }
 }

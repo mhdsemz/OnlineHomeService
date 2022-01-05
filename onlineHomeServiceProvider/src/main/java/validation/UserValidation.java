@@ -28,6 +28,7 @@ public class UserValidation {
             return true;
         throw new InvalidInformationException("***your phoneNumber is not true!! please try again***");
     }
+
     public boolean validateNewName(String name, List<String> list) {
         if (list.contains(name))
             throw new RuntimeException("***duplicate name! please enter another name***");

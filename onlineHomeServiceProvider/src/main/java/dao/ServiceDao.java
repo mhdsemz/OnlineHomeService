@@ -2,6 +2,10 @@ package dao;
 
 import models.service.Service;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import javax.persistence.Query;
+import java.util.List;
 
 
 public class ServiceDao extends BaseDao {
@@ -31,16 +35,16 @@ public class ServiceDao extends BaseDao {
         session.close();
     }
 
-//    public List<String> getListOfServicesName() {
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        String hql = "select a.name from Service a";
-//        Query query = session.createQuery(hql, String.class);
-//        List<String> list = query.list();
-//        transaction.commit();
-//        session.close();
-//        return list;
-//    }
+    public List<String> getListOfServicesName() {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "select a.name from Service a";
+        Query query = session.createQuery(hql, String.class);
+        List list = query.getResultList();
+        transaction.commit();
+        session.close();
+        return list;
+    }
 
 
 }
