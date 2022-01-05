@@ -12,7 +12,7 @@ import java.util.List;
 public class ServiceDao extends BaseDao {
     private Session session;
 
-    public void creat(Service service) {
+    public void create(Service service) {
         session = builderSessionFactory().openSession();
         session.beginTransaction();
         session.save(service);
