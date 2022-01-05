@@ -2,6 +2,8 @@ package validation;
 
 import exception.InvalidInformationException;
 
+import java.util.List;
+
 public class UserValidation {
 
     public static String checkEmailValidation(String input) {
@@ -26,4 +28,10 @@ public class UserValidation {
             return true;
         throw new InvalidInformationException("***your phoneNumber is not true!! please try again***");
     }
+    public boolean validateNewName(String name, List<String> list) {
+        if (list.contains(name))
+            throw new RuntimeException("***duplicate name! please enter another name***");
+        return true;
+    }
 }
+

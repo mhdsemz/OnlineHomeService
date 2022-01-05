@@ -34,14 +34,15 @@ public class SubServiceDao extends BaseDao {
 
     }
 
-//    public List<String> getAllName() {
-//        Session session = sessionFactory.openSession();
-//        Transaction transaction = session.beginTransaction();
-//        String hql = "select a.name from SubService a";
-//        Query query = session.createQuery(hql, String.class);
-//        List<String> list = query.list();
-//        transaction.commit();
-//        session.close();
-//        return list;
-//    }
+    public List<String> getAllName() {
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+        String hql = "select a.name from SubService a";
+        Query query = session.createQuery(hql, String.class);
+        List list = query.getResultList();
+        transaction.commit();
+        session.close();
+        return list;
+    }
+
 }
