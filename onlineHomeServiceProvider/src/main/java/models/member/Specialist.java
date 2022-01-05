@@ -1,8 +1,7 @@
 package models.member;
 
 import lombok.Data;
-import models.Service;
-import models.member.User;
+import models.service.Service;
 
 import javax.persistence.*;
 import java.util.ArrayList;
