@@ -1,8 +1,6 @@
 package config;
 
-import dao.CustomerDao;
-import dao.OrderDao;
-import dao.UserDao;
+import dao.*;
 import models.member.Specialist;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -34,10 +32,34 @@ public class SpringConfig {
     }
 
     @Bean
-    public Specialist specialistDao() {
-        return new Specialist();
+    public SpecialistDao specialistDao() {
+        return new SpecialistDao();
     }
 
+    @Bean
+    public CommentDao commentDao() {
+        return new CommentDao();
+    }
+
+    @Bean
+    public ManagerDao managerDao() {
+        return new ManagerDao();
+    }
+
+    @Bean
+    public ServiceDao serviceDao() {
+        return new ServiceDao();
+    }
+
+    @Bean
+    public SubServiceDao SubServiceDao() {
+        return new SubServiceDao();
+    }
+
+    @Bean
+    public SuggestDao suggestDao() {
+        return new SuggestDao();
+    }
 
 
 }
