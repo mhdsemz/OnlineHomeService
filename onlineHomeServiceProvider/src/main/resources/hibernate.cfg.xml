@@ -23,6 +23,7 @@
         <mapping class="models.Suggest"/>
         <mapping class="models.service.SubService"/>
         <mapping class="models.service.Service"/>
+
     </session-factory>
 
 </hibernate-configuration>

@@ -33,7 +33,7 @@ public class OrderService {
         //TODO
     }
 
-    public boolean addService(Service service) {
+    public boolean createService(Service service) {
         serviceDao.create(service);
         return true;
     }

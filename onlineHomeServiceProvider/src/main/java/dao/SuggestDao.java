@@ -7,7 +7,7 @@ import org.hibernate.Session;
 public class SuggestDao extends BaseDao {
     private Session session;
 
-    public void creat(Suggest suggest) {
+    public void create(Suggest suggest) {
         session = builderSessionFactory().openSession();
         session.beginTransaction();
         session.save(suggest);

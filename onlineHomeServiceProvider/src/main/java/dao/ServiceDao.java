@@ -1,13 +1,8 @@
 package dao;
 
-import models.Suggest;
 import models.service.Service;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
-import javax.persistence.Query;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ServiceDao extends BaseDao {
     private Session session;
