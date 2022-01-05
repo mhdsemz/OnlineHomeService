@@ -1,6 +1,6 @@
 package models.enums;
 
-public enum UserType {
+public enum UserRole {
     MANAGER, CUSTOMER, SPECIALIST;
 
 }
