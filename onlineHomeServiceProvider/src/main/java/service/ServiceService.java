@@ -1,6 +1,7 @@
 package service;
 
 import dao.ServiceDao;
+import dao.UserDao;
 import lombok.Data;
 
 import models.member.User;
@@ -14,6 +15,8 @@ public class ServiceService {
     ServiceDao serviceDao;
     UserValidation userValidation;
     CustomerService customerService;
+    UserDao userDao;
+
 
     public boolean createService(Service service) {
         serviceDao.create(service);
@@ -27,7 +30,8 @@ public class ServiceService {
     public boolean checkNameValidationOfService(String name) {
         return userValidation.validateNewName(name, getListOfServicesNames());
     }
-//need to check this
+
+    //need to check this
     public void changePassword(String oldPass, String newPass, User user) {
         if (userValidation.checkIfPassIsTrue(oldPass, user.getPassword())) {
             if (userValidation.validatePassword(newPass)) {
@@ -35,5 +39,13 @@ public class ServiceService {
             }
         }
         System.out.println("something is wrong!!!");
+    }
+
+    public User getUserByPassAndPhoneNumber(String pass, String phoneNumber) {
+        User userByPhoneNumberAndPass = userDao.getUserByPhoneNumberAndPass(phoneNumber, pass);
+        if (userByPhoneNumberAndPass == null) {
+            throw new RuntimeException("***something is wrong!! please check again***");
+        }
+        return userByPhoneNumberAndPass;
     }
 }

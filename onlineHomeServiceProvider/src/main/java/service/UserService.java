@@ -8,7 +8,7 @@ import models.member.User;
 public class UserService {
     UserDao userDao;
 
-    public User findUserByPhoneNumberAndPass(String phoneNumber) {
+    public User findUserByPhoneNumber(String phoneNumber) {
         User user = userDao.findByPhoneNumber(phoneNumber);
         return user;
     }

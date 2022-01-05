@@ -1,5 +1,6 @@
 package dao;
 
+import models.member.Customer;
 import models.member.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -48,5 +49,17 @@ public class UserDao extends BaseDao {
         transaction.commit();
         session.close();
         return (User) list;
+    }
+
+    public User getUserByPhoneNumberAndPass(String phoneNumber, String password) {
+        session = builderSessionFactory().openSession();
+        session.beginTransaction();
+        org.hibernate.query.Query query = session.createQuery("FROM User WHERE phoneNumber=:phoneNumber and password=:password");
+        query.setParameter("phoneNumber", phoneNumber);
+        query.setParameter("password", password);
+        User user = (User) query.getSingleResult();
+        session.getTransaction().commit();
+        session.close();
+        return user;
     }
 }
