@@ -3,6 +3,7 @@ package validation;
 import exception.InvalidInformationException;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class UserValidation {
 
@@ -34,5 +35,14 @@ public class UserValidation {
             throw new RuntimeException("***duplicate name! please enter another name***");
         return true;
     }
+
+    public boolean validatePassword(String password) {
+        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[@#$%^&+=])(?=.*[A-Z])(?=\\S+$).{8}$";
+        if (!Pattern.matches(regex, password))
+            throw new RuntimeException("1. A password must have at least eight characters.\n" +
+                    "2. A password consists of only letters and digits.");
+        return true;
+    }
+
 }
 
