@@ -18,4 +18,5 @@ public class SubService {
     private String description;
     @ManyToOne
     private Service service;
+    private String name;
 }
