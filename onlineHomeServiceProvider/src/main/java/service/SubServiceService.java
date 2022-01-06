@@ -2,11 +2,12 @@ package service;
 
 import dao.ServiceDao;
 import dao.SubServiceDao;
+import lombok.Data;
 import models.service.SubService;
 import validation.UserValidation;
 
 import java.util.List;
-
+@Data
 public class SubServiceService {
     SubServiceDao subServiceDao;
     UserValidation userValidation;

@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import service.*;
 import validation.UserValidation;
 
-@Import(value = {SpringConfig.class, UserValidation.class})
+@Import(value = {SpringConfig.class, ValidationSpringConfig.class})
 @Configuration
 public class ServicesSpringConfig {
 
@@ -47,5 +47,19 @@ public class ServicesSpringConfig {
         serviceService.setServiceDao(serviceDao);
         serviceService.setUserValidation(validation);
         return serviceService;
+    }
+
+    @Bean
+    public SubServiceService subServiceService(SubServiceDao subServiceDao, UserValidation userValidation) {
+        SubServiceService subServiceService = new SubServiceService();
+        subServiceService.setSubServiceDao(subServiceDao);
+        subServiceService.setUserValidation(userValidation);
+        return subServiceService;
+    }
+
+    @Bean
+    public CommentService commentService(CommentDao commentDao) {
+        CommentService commentService = new CommentService();
+        commentService.set
     }
 }
