@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = {"dao", "service"})
-public class SpringConfig {
+public class DaoSpringConfig {
 //    @Bean
 //    public CustomerService customerService(CustomerDao customerDao) {
 //        CustomerService customerService = new CustomerService();
@@ -60,6 +60,5 @@ public class SpringConfig {
     public SuggestDao suggestDao() {
         return new SuggestDao();
     }
-
 
 }

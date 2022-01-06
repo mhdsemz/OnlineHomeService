@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Import;
 import service.*;
 import validation.UserValidation;
 
-@Import(value = {SpringConfig.class, ValidationSpringConfig.class})
+@Import(value = {DaoSpringConfig.class, ValidationSpringConfig.class})
 @Configuration
 public class ServicesSpringConfig {
 
@@ -60,6 +60,14 @@ public class ServicesSpringConfig {
     @Bean
     public CommentService commentService(CommentDao commentDao) {
         CommentService commentService = new CommentService();
-        commentService.set
+        commentService.setCommentDao(commentDao);
+        return commentService;
+    }
+
+    @Bean
+    public SuggestService suggestService(SuggestDao suggestDao) {
+        SuggestService suggestService1 = new SuggestService();
+        suggestService1.setSuggestDao(suggestDao);
+        return suggestService1;
     }
 }
