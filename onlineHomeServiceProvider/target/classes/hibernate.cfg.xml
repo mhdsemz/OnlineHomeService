@@ -7,13 +7,22 @@
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.url">jdbc:mysql://localhost:3306/onlinehomeservice</property>
-        <property name="connection.username">neda</property>
+        <property name="connection.username">root</property>
         <property name="connection.password">mhd2323</property>
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         <property name="connection.pool_size">10</property>
         <property name="show_sql">false</property>
         <property name="format_sql">false</property>
+        <mapping class="models.member.User"/>
+        <mapping class="models.member.Specialist"/>
+        <mapping class="models.member.Manager"/>
+        <mapping class="models.member.Customer"/>
+        <mapping class="models.Comment"/>
+        <mapping class="models.Order"/>
+        <mapping class="models.Suggest"/>
+        <mapping class="models.service.SubService"/>
+        <mapping class="models.service.Service"/>
 
     </session-factory>
 
