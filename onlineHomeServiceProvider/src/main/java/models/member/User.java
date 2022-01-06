@@ -1,7 +1,7 @@
 package models.member;
 
 import lombok.Data;
-import models.UserStatus;
+import models.enums.UserRole;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -22,7 +22,7 @@ public class User {
     private String password;
     private String phoneNumber;
     @Enumerated(EnumType.STRING)
-    private UserStatus userStatus;
+    private UserRole userRole;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date registerDate;
