@@ -70,4 +70,11 @@ public class ServicesSpringConfig {
         suggestService1.setSuggestDao(suggestDao);
         return suggestService1;
     }
+
+    @Bean
+    public OrderService orderService(OrderDao orderDao) {
+        OrderService orderService = new OrderService();
+        orderService.setOrderDao(orderDao);
+        return orderService;
+    }
 }
