@@ -7,5 +7,6 @@ public class UserDto {
     private String lastname;
     private String emailAddress;
     private UserStatus userStatus;
+    private Long credit;
 
 }
