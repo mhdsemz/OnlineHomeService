@@ -2,6 +2,7 @@ package service;
 
 import dao.CustomerDao;
 import lombok.Data;
+import models.enums.UserStatus;
 import models.member.Customer;
 import models.member.User;
 
@@ -23,5 +24,14 @@ public class CustomerService {
         return customer;
     }
 
-
+    public void createCustomer(String customerInfo) {
+        String[] strings = customerInfo.split(",");
+        Customer customer = Customer.builder().firstname(strings[0])
+                .lastname(strings[1])
+                .phoneNumber(strings[2])
+                .emailAddress(strings[3])
+                .credit(Long.parseLong(strings[4]))
+                .password(strings[5])
+                .userStatus(UserStatus.NEW).build();
+    }
 }
