@@ -3,6 +3,7 @@ package service;
 import dao.UserDao;
 import lombok.Data;
 import models.member.User;
+import validation.UserValidation;
 
 @Data
 public class UserService {
