@@ -24,7 +24,7 @@ public class CustomerService {
         return customer;
     }
 
-    public void createCustomer(String customerInfo) {
+    public Customer createNewCustomer(String customerInfo) {
         String[] strings = customerInfo.split(",");
         Customer customer = Customer.builder().firstname(strings[0])
                 .lastname(strings[1])
@@ -33,5 +33,6 @@ public class CustomerService {
                 .credit(Long.parseLong(strings[4]))
                 .password(strings[5])
                 .userStatus(UserStatus.NEW).build();
+        return customer;
     }
 }
