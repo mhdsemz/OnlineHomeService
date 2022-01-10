@@ -12,6 +12,7 @@ public class UserDao extends BaseDao {
     private Session session;
 
     public void save(User user) {
+        //
         if (user == null) {
             throw new RuntimeException("sorry user is null!!!");
         } else {

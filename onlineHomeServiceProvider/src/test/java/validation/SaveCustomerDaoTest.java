@@ -1,6 +1,7 @@
 package validation;
 
 import dao.CustomerDao;
+import models.member.Customer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,10 +24,4 @@ public class SaveCustomerDaoTest {
 //        customerDao.save(creatCustomer());
 
     }
-
-//    Customer creatCustomer() {
-//        return Customer.builder()
-//                .firstName("sara")
-//                .build();
-//    }
 }

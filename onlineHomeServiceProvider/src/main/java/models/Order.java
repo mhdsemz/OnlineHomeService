@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import models.enums.OrderStatus;
 import models.member.Customer;
+import models.member.Specialist;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -24,6 +25,8 @@ public class Order {
     private int id;
     @ManyToOne
     private Customer customer;
+    @OneToMany
+    private Specialist specialist;
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
     private List<Suggest> suggests = new ArrayList<>();
     private String address;
@@ -34,7 +37,7 @@ public class Order {
     private OrderStatus orderStatus;
     @CreationTimestamp
     private Date registrationDate;
-    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
     private Date toDoDate;
 
 

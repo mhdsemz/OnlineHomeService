@@ -5,13 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import models.Order;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
-@Builder
+@SuperBuilder
 @Entity
 @Data
 @AllArgsConstructor

@@ -1,6 +1,10 @@
 package models.member;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import models.enums.UserRole;
 import models.enums.UserStatus;
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,6 +15,9 @@ import java.util.Date;
 @Data
 @Entity
 @Inheritance
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

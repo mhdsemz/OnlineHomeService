@@ -24,7 +24,7 @@ public class Suggest {
     private double suggestedPrice;
     @CreationTimestamp
     private Date registrationDate;
-    private int durationOfWork;
+    private long durationOfWork;
     @ManyToOne
     private Order order;
 

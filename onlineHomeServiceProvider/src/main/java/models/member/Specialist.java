@@ -1,13 +1,15 @@
 package models.member;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import models.service.Service;
+import models.service.SubService;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-@EqualsAndHashCode(callSuper = true)
-@Builder
+@EqualsAndHashCode(callSuper = false)
+@SuperBuilder
 @Data
 @Entity
 @NoArgsConstructor
@@ -17,7 +19,5 @@ public class Specialist extends User {
     @Column(name = "picture",nullable = false)
     private byte[] image;
     @ManyToMany(mappedBy = "specialists", fetch = FetchType.EAGER)
-    private List<Service> services = new ArrayList<>();
-
-
+    private List<SubService> services = new ArrayList<>();
 }
