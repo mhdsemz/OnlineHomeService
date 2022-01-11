@@ -27,6 +27,7 @@ public class Suggest {
     private long durationOfWork;
     @ManyToOne
     private Order order;
+    private int startTime;
 
 
 }
