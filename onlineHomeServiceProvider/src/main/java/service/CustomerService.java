@@ -14,15 +14,20 @@ public class CustomerService {
         customerDao.save(customer);
     }
 
+    public Customer findByEmail(String email) {
+        Customer customer = customerDao.findByEmailAddress(email);
+        return customer;
+    }
+
     public void changePassword(String newPass, User user) {
         user.setPassword(newPass);
         customerDao.update((Customer) user);
     }
 
-    public Customer findByPhoneNumber(String phoneNumber, String password) {
-        Customer customer = customerDao.getCustomerByPhoneNumberAndPass(phoneNumber, password);
-        return customer;
-    }
+//    public Customer findByPhoneNumber(String phoneNumber, String password) {
+//        Customer customer = customerDao.getCustomerByPhoneNumberAndPass(phoneNumber, password);
+//        return customer;
+//    }
 
     public Customer createNewCustomer(String customerInfo) {
         String[] strings = customerInfo.split(",");

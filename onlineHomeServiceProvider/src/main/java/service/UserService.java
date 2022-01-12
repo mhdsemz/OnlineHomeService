@@ -11,18 +11,18 @@ public class UserService {
     UserValidation userValidation;
     CustomerService customerService;
 
-    public User findUserByPhoneNumber(String phoneNumber) {
-        User user = userDao.findByPhoneNumber(phoneNumber);
-        return user;
-    }
-
-    public User getUserByPassAndPhoneNumber(String pass, String phoneNumber) {
-        User userByPhoneNumberAndPass = userDao.getUserByPhoneNumberAndPass(phoneNumber, pass);
-        if (userByPhoneNumberAndPass == null) {
-            throw new RuntimeException("***something is wrong!! please check again***");
-        }
-        return userByPhoneNumberAndPass;
-    }
+//    public User findUserByPhoneNumber(String phoneNumber) {
+//        User user = userDao.findByPhoneNumber(phoneNumber);
+//        return user;
+//    }
+//
+//    public User getUserByPassAndPhoneNumber(String pass, String phoneNumber) {
+//        User userByPhoneNumberAndPass = userDao.getUserByPhoneNumberAndPass(phoneNumber, pass);
+//        if (userByPhoneNumberAndPass == null) {
+//            throw new RuntimeException("***something is wrong!! please check again***");
+//        }
+//        return userByPhoneNumberAndPass;
+//    }
 
     //need to check this
     public void changePassword(String oldPass, String newPass, User user) {

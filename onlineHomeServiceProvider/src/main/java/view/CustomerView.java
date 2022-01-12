@@ -1,6 +1,7 @@
 package view;
 
-public class CustomerView {
+public class CustomerView extends BaseView {
     public void addNewCustomer() {
+
     }
 }
