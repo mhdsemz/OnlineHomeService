@@ -5,7 +5,9 @@ import lombok.Data;
 import models.enums.UserStatus;
 import models.member.Customer;
 import models.member.User;
+import org.springframework.stereotype.Service;
 
+@Service
 @Data
 public class CustomerService {
     private CustomerDao customerDao;
@@ -19,10 +21,10 @@ public class CustomerService {
         return customer;
     }
 
-    public void changePassword(String newPass, User user) {
-        user.setPassword(newPass);
-        customerDao.update((Customer) user);
-    }
+//    public void changePassword(String newPass, User user) {
+//        user.setPassword(newPass);
+//        customerDao.update((Customer) user);
+//    }
 
 //    public Customer findByPhoneNumber(String phoneNumber, String password) {
 //        Customer customer = customerDao.getCustomerByPhoneNumberAndPass(phoneNumber, password);

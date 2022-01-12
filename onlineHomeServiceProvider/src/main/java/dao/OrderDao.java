@@ -3,9 +3,10 @@ package dao;
 import models.Order;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Service;
 
 import static dao.BaseDao.builderSessionFactory;
-
+@Service
 public class OrderDao extends BaseDao {
     private Session session;
 

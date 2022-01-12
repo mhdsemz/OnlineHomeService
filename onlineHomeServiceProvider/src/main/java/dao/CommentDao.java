@@ -2,7 +2,9 @@ package dao;
 
 import models.Comment;
 import org.hibernate.Session;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CommentDao extends BaseDao {
     private Session session;
 

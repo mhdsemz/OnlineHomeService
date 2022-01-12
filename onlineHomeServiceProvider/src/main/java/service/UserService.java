@@ -3,8 +3,9 @@ package service;
 import dao.UserDao;
 import lombok.Data;
 import models.member.User;
+import org.springframework.stereotype.Service;
 import validation.UserValidation;
-
+@Service
 @Data
 public class UserService {
     UserDao userDao;

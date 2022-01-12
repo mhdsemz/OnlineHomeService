@@ -5,7 +5,9 @@ import lombok.Data;
 import models.enums.UserStatus;
 import models.member.Specialist;
 import models.member.User;
+import org.springframework.stereotype.Service;
 
+@Service
 @Data
 public class SpecialistService {
     private SpecialistDao specialistDao;

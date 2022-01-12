@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 @Repository
 public interface CustomerDao extends JpaRepository<Customer, Integer> {

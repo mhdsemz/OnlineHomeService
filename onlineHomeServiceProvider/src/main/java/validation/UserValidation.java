@@ -1,10 +1,11 @@
 package validation;
 
 import exception.InvalidInformationException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.regex.Pattern;
-
+@Service
 public class UserValidation {
 
     public  boolean checkEmailValidation(String input) {

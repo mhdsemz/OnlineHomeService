@@ -3,9 +3,11 @@ package service;
 import dao.SubServiceDao;
 import lombok.Data;
 import models.service.SubService;
+import org.springframework.stereotype.Service;
 import validation.UserValidation;
 
 import java.util.List;
+@Service
 @Data
 public class SubServiceService {
     SubServiceDao subServiceDao;

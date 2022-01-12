@@ -1,13 +1,11 @@
 package view;
 
 
-import config.ServicesSpringConfig;
 import exception.InvalidInformationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import service.UserService;
 
-import java.awt.*;
 import java.util.Scanner;
 
 public class BaseView {

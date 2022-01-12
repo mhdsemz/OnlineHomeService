@@ -8,7 +8,7 @@ import models.service.Service;
 import validation.UserValidation;
 
 import java.util.List;
-
+@org.springframework.stereotype.Service
 @Data
 public class ServiceService {
     ServiceDao serviceDao;

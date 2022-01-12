@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 import javax.persistence.Query;
 import java.util.List;
 
-
+@org.springframework.stereotype.Service
 public class ServiceDao extends BaseDao {
     private Session session;
 

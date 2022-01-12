@@ -4,10 +4,10 @@ import dao.OrderDao;
 import dao.ServiceDao;
 import lombok.Data;
 import models.Order;
-import models.service.Service;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 @Data
 public class OrderService {
     OrderDao orderDao;

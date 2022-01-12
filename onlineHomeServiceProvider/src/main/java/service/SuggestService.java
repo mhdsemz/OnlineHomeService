@@ -5,7 +5,9 @@ import jdk.jshell.SourceCodeAnalysis;
 import lombok.Data;
 import models.Suggest;
 import models.member.Specialist;
+import org.springframework.stereotype.Service;
 
+@Service
 @Data
 public class SuggestService {
     SuggestDao suggestDao;

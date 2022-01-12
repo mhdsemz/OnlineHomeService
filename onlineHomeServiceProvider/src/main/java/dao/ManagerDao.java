@@ -2,22 +2,15 @@ package dao;
 
 import models.member.Manager;
 import org.hibernate.Session;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import static dao.BaseDao.builderSessionFactory;
 
-public class ManagerDao {
-    private Session session;
+@Repository
+public interface ManagerDao extends JpaRepository<Manager, Integer> {
+    @Override
+    Manager save(Manager manager);
 
-    public void save(Manager manager) {
-        if (manager == null) {
-            throw new RuntimeException("sorry manager is null!!!");
-        } else {
-            session = builderSessionFactory().openSession();
-            session.beginTransaction();
-            session.save(manager);
-            session.getTransaction().commit();
-            session.close();
-        }
-    }
 
 }
