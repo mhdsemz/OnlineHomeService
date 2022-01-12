@@ -1,40 +1,13 @@
 package dao;
 
 import models.Order;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import static dao.BaseDao.builderSessionFactory;
 @Service
-public class OrderDao extends BaseDao {
-    private Session session;
-
-    public void save(Order order) {
-        if (order == null) {
-            throw new RuntimeException("sorry order is null!!!");
-        } else {
-            session = builderSessionFactory().openSession();
-            session.beginTransaction();
-            session.save(order);
-            session.getTransaction().commit();
-            session.close();
-        }
-    }
-
-    public void update(Order order) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.update(order);
-        transaction.commit();
-        session.close();
-    }
-
-    public void delete(Order order) {
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-        session.remove(order);
-        transaction.commit();
-        session.close();
-    }
+@Repository
+public interface OrderDao extends JpaRepository<Order,Integer> {
+    Order save(Order order);
 }
+

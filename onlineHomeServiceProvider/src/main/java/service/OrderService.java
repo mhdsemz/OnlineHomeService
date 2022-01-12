@@ -6,7 +6,7 @@ import lombok.Data;
 import models.Order;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+
 @Service
 @Data
 public class OrderService {
@@ -17,11 +17,5 @@ public class OrderService {
         orderDao.save(order);
         return true;
     }
-
-    public void updateStatus(Order order) {
-        orderDao.update(order);
-    }
-
-
 
 }

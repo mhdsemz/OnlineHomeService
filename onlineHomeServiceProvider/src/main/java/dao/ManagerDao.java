@@ -1,5 +1,6 @@
 package dao;
 
+import models.Address;
 import models.member.Manager;
 import org.hibernate.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,5 +13,5 @@ public interface ManagerDao extends JpaRepository<Manager, Integer> {
     @Override
     Manager save(Manager manager);
 
-
+   
 }

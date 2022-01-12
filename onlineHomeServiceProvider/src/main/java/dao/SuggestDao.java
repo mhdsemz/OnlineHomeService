@@ -1,26 +1,13 @@
 package dao;
 
-import models.Comment;
 import models.Suggest;
-import org.hibernate.Session;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class SuggestDao extends BaseDao {
-    private Session session;
+@Repository
+public interface SuggestDao extends JpaRepository<Suggest, Integer> {
+    @Override
+    Suggest save(Suggest suggest);
 
-    public void create(Suggest suggest) {
-        session = builderSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(suggest);
-        session.getTransaction().commit();
-        session.close();
-    }
-
-    public void delete(Suggest suggest) {
-        session = builderSessionFactory().openSession();
-        session.beginTransaction();
-        session.delete(suggest);
-        session.getTransaction().commit();
-        session.close();
-    }
 
 }

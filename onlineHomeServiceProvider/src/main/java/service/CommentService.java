@@ -11,6 +11,6 @@ public class CommentService {
     CommentDao commentDao;
 
     public void save(Comment comment) {
-        commentDao.creatComment(comment);
+        commentDao.save(comment);
     }
 }

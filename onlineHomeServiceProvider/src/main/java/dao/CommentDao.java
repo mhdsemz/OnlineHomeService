@@ -2,27 +2,13 @@ package dao;
 
 import models.Comment;
 import org.hibernate.Session;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CommentDao extends BaseDao {
-    private Session session;
-
-    public void creatComment(Comment comment) {
-        session = builderSessionFactory().openSession();
-        session.beginTransaction();
-        session.save(comment);
-        session.getTransaction().commit();
-        session.close();
-    }
-
-    public void deleteComment(Comment comment) {
-        session = builderSessionFactory().openSession();
-        session.beginTransaction();
-        session.delete(comment);
-        session.getTransaction().commit();
-        session.close();
-    }
-
-
+@Repository
+public interface CommentDao extends JpaRepository<Comment, Integer> {
+    @Override
+    Comment save(Comment comment);
 }

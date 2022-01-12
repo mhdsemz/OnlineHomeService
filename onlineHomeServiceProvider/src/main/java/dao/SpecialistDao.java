@@ -6,23 +6,15 @@ import models.service.SubService;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import static dao.BaseDao.builderSessionFactory;
+@Repository
+public interface SpecialistDao extends JpaRepository<Specialist,Integer> {
 
-public class SpecialistDao {
 
 
-//    public void save(Specialist specialist) {
-//        if (specialist == null) {
-//            throw new RuntimeException("sorry specialist is null!!!");
-//        } else {
-//            session = builderSessionFactory().openSession();
-//            session.beginTransaction();
-//            session.save(specialist);
-//            session.getTransaction().commit();
-//            session.close();
-//        }
-//    }
 //
 //    public Specialist getSpecialistByPhoneNumberAndPass(String phoneNumber, String password) {
 //        session = builderSessionFactory().openSession();
